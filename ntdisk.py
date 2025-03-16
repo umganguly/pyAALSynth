@@ -444,14 +444,14 @@ class ntdisk:
         diskheightinner   = (1.0e+5 * u.cm / self.rg)     * np.power(self.alpha,0)     * np.power(mstar, 0)     *          mdotstar        * np.power(r,0)   * np.power(y,0)      * np.power(a,2)      * np.power(b,-3)     * np.power(c,1/2) * np.power(d,-1)     * np.power(s,-1)     *          q
         diskheightmiddle  = (3.0e+3 * u.cm / self.rg)     * np.power(self.alpha,-1/10) * np.power(mstar, 9/10)  * np.power(mdotstar,2/10)  * np.power(r,0)   * np.power(y,21/20)  *          a         * np.power(b,-6/5)   * np.power(c,1/2) * np.power(d,-3/5)   * np.power(s,-1/2)   * np.power(q,1/5)
         diskheightouter   = ( 900.0 * u.cm / self.rg)     * np.power(self.alpha,-1/10) * np.power(mstar, 9/10)  * np.power(mdotstar,3/10)  * np.power(r,9/8) * np.power(y,0)      * np.power(a,19/20)  * np.power(b,-11/10) * np.power(c,1/2) * np.power(d,-23/40) * np.power(s,-19/40) * np.power(q,3/40)
-        temperatureinner  = (4.0e+7 * u.Kelvin)      * np.power(self.alpha,-1/4)  * np.power(mstar, -1/4)  * np.power(mdotstar,0)     * np.power(r,0)   * np.power(y,-3/4)   * np.power(a,-1/2)   * np.power(b,1/2)    * np.power(c,0)   * np.power(d,0)      * np.power(s,1/4)    * np.power(q,0)
-        temperaturemiddle = (3.0e+8 * u.Kelvin)      * np.power(self.alpha,-1/5)  * np.power(mstar, -3/5)  * np.power(mdotstar,2/5)   * np.power(r,0)   * np.power(y,-9/5)   * np.power(a,0)      * np.power(b,-2/5)   * np.power(c,0)   * np.power(d,-1/5)   * np.power(s,0)      * np.power(q,2/5)
-        temperatureouter  = (8.0e+7 * u.Kelvin)      * np.power(self.alpha,-1/5)  * np.power(mstar, -1/2)  * np.power(mdotstar,3/10)  * np.power(r,0)   * np.power(y,-3/2)   * np.power(a,-1/10)  * np.power(b,-1/5)   * np.power(c,0)   * np.power(d,-3/20)  * np.power(s,1/20)   * np.power(q,3/10)
-        densityinner      = (1.0e-4 * u.g / u.cm**3) * np.power(self.alpha,-1)    *          mstar         * np.power(mdotstar,-2)    * np.power(r,0)   * np.power(y,3)      * np.power(a,-4)     * np.power(b,6)      * np.power(c,0)   *          d         * np.power(s,2)      * np.power(q,-2)    / const.u.cgs
-        densitymiddle     = (10.0   * u.g / u.cm**3) * np.power(self.alpha,-7/10) * np.power(mstar,-11/10) * np.power(mdotstar,2/5)   * np.power(r,0)   * np.power(y,-33/10) * np.power(a,-1)     * np.power(b,3/5)    * np.power(c,0)   * np.power(d,-1/5)   * np.power(s,1/2)    * np.power(q,2/5)   / const.u.cgs
-        densityouter      = (80.0   * u.g / u.cm**3) * np.power(self.alpha,-7/10) * np.power(mstar,-5/4)   * np.power(mdotstar,11/20) * np.power(r,0)   * np.power(y,-15/4)  * np.power(a,-17/20) * np.power(b,3/10)   * np.power(c,0)   * np.power(d,-11/40) * np.power(s,17/40)  * np.power(q,11/20) / const.u.cgs
-        pratio            = (5e-5)                   * np.power(self.alpha,-1/4)  * np.power(mstar, 7/4)   * np.power(mdotstar,-2)    * np.power(r,0)   * np.power(y,21/4)   * np.power(a,-5/2)   * np.power(b,9/2)    * np.power(c,0)   *          d         * np.power(s,5/4)    * np.power(q,-2)
-        tratio            = (6e-6)                                                *          mstar         * np.power(mdotstar,-1)    * np.power(r,0)   * np.power(y,3)      * np.power(a,-1)     * np.power(b,2)      * np.power(c,0)   * np.power(d,1/2)    * np.power(s,1/2)    * np.power(q,-1)
+        temperatureinner  = (4.0e+7 * u.Kelvin)           * np.power(self.alpha,-1/4)  * np.power(mstar, -1/4)  * np.power(mdotstar,0)     * np.power(r,0)   * np.power(y,-3/4)   * np.power(a,-1/2)   * np.power(b,1/2)    * np.power(c,0)   * np.power(d,0)      * np.power(s,1/4)    * np.power(q,0)
+        temperaturemiddle = (3.0e+8 * u.Kelvin)           * np.power(self.alpha,-1/5)  * np.power(mstar, -3/5)  * np.power(mdotstar,2/5)   * np.power(r,0)   * np.power(y,-9/5)   * np.power(a,0)      * np.power(b,-2/5)   * np.power(c,0)   * np.power(d,-1/5)   * np.power(s,0)      * np.power(q,2/5)
+        temperatureouter  = (8.0e+7 * u.Kelvin)           * np.power(self.alpha,-1/5)  * np.power(mstar, -1/2)  * np.power(mdotstar,3/10)  * np.power(r,0)   * np.power(y,-3/2)   * np.power(a,-1/10)  * np.power(b,-1/5)   * np.power(c,0)   * np.power(d,-3/20)  * np.power(s,1/20)   * np.power(q,3/10)
+        densityinner      = (1.0e-4 * u.g / u.cm**3)      * np.power(self.alpha,-1)    *          mstar         * np.power(mdotstar,-2)    * np.power(r,0)   * np.power(y,3)      * np.power(a,-4)     * np.power(b,6)      * np.power(c,0)   *          d         * np.power(s,2)      * np.power(q,-2)    / const.u.cgs
+        densitymiddle     = (10.0   * u.g / u.cm**3)      * np.power(self.alpha,-7/10) * np.power(mstar,-11/10) * np.power(mdotstar,2/5)   * np.power(r,0)   * np.power(y,-33/10) * np.power(a,-1)     * np.power(b,3/5)    * np.power(c,0)   * np.power(d,-1/5)   * np.power(s,1/2)    * np.power(q,2/5)   / const.u.cgs
+        densityouter      = (80.0   * u.g / u.cm**3)      * np.power(self.alpha,-7/10) * np.power(mstar,-5/4)   * np.power(mdotstar,11/20) * np.power(r,0)   * np.power(y,-15/4)  * np.power(a,-17/20) * np.power(b,3/10)   * np.power(c,0)   * np.power(d,-11/40) * np.power(s,17/40)  * np.power(q,11/20) / const.u.cgs
+        pratio            = (5e-5)                        * np.power(self.alpha,-1/4)  * np.power(mstar, 7/4)   * np.power(mdotstar,-2)    * np.power(r,0)   * np.power(y,21/4)   * np.power(a,-5/2)   * np.power(b,9/2)    * np.power(c,0)   *          d         * np.power(s,5/4)    * np.power(q,-2)
+        tratio            = (6e-6)                                                     *          mstar         * np.power(mdotstar,-1)    * np.power(r,0)   * np.power(y,3)      * np.power(a,-1)     * np.power(b,2)      * np.power(c,0)   * np.power(d,1/2)    * np.power(s,1/2)    * np.power(q,-1)
         ######################################################
         pdx    = np.extract(pratio > 1, np.arange(0,pratio.size,1))
         tdx    = np.extract(tratio > 1, np.arange(0,tratio.size,1))
@@ -589,7 +589,12 @@ class ntdisk:
     def pltdisk(self,i=0):
         plt.subplot(111,frameon=False)
         plt.axis('off')
-        plt.title(r'$S_{bh}$ = '+'{:.2f}'.format(sbh)+r' --- log $M_{bh}/M_\odot$ = '+'{:.1f}'.format(np.log10(mbh))+r' ---  $\dot{M}$ = '+'{:.1f}'.format(mdot)+r' $M_\odot$/yr --- log r/rg = '+'{:.3g}'.format(np.log10(self.rstar[i]))+' --- robs/rg = {:.3g} --- zobs/rg = {:.3g}'.format(mydisk.robs, mydisk.zobs))
+        print(r'$S_{bh}$ = '+'{:.2f}'.format(self.sbh))
+        print(r' --- log $M_{bh}/M_\odot$ = '+'{:.1g}'.format(np.log10(self.mbh.to(u.solMass).value)))
+        print(r' ---  $\dot{M}$ = '+'{:.1g}'.format(self.mdot))
+        print(r' $M_\odot$/yr --- log r/rg = '+'{:.3g}'.format(np.log10(self.rstar[i])))
+        print(r' --- robs/rg = {:.3g} --- zobs/rg = {:.3g}'.format(self.robs, self.zobs))
+        plt.title(r'$S_{bh}$ = '+'{:.2f}'.format(self.sbh)+r' --- log $M_{bh}/M_\odot$ = '+'{:.1f}'.format(np.log10(self.mbh.to(u.solMass).value))+r' ---  $\dot{M}$ = '+'{:.1g}'.format(self.mdot.to(u.solMass/u.yr))+r' $M_\odot$/yr --- log r/rg = '+'{:.3g}'.format(np.log10(self.rstar[i]))+' --- robs/rg = {:.3g} --- zobs/rg = {:.3g}'.format(self.robs, self.zobs))
 
         plt.subplot(321)
         plt.plot(self.rstar, self.diskheight,'k')
@@ -623,111 +628,6 @@ class ntdisk:
         plt.yscale("log")
         plt.xscale("log")
 
-    ######################################################
-    def sph(self,N,t,tEnd,dt,h):
-        """ SPH simulation """
-
-        # Simulation parameters
-        print(f"Running SPH with {N} particles from t={t}-{tEnd} in {dt} timestep with smoothing of {h}")
-
-        # Generate Initial Conditions
-        m     = 1 #M/N                    # single particle mass
-        rng   = np.random.default_rng()
-        r     = self.rstar[0] * np.power(10.0,(np.log10(self.rstar[-1]/self.rstar[0]) * rng.random(N))) * self.rg
-        z     = rng.exponential(size=N) * np.interp(r.value/self.rg.value, self.rstar, self.zt1) * self.rg
-        zdx   = np.extract(z < np.interp(r.value/self.rg.value, self.rstar, self.zt1) * self.rg, range(N))
-        while zdx.size > 0:
-            z[zdx] = rng.exponential(size=zdx.size) * np.interp(r[zdx].value/self.rg.value, self.rstar, self.zt1) * self.rg
-            zdx    = np.extract(z < np.interp(r.value/self.rg.value, self.rstar, self.zt1) * self.rg, range(N))
-
-        pos   = np.zeros((N,3))
-        pos[:,0] = r.value # Initially, theta = 0, so x = r, y = 0
-        pos[:,1] = np.zeros(N)
-        pos[:,2] = z.value
-
-        vx0   = np.zeros(N)
-        vy0   = (const.c.cgs / np.sqrt(r/self.rg)) # Rotation cgs units cm/s
-        vz0   = ((np.sqrt(5 * const.k_B.cgs * np.interp(r/self.rg, self.rstar, self.tempt1) / (3 * const.u.cgs))).decompose(bases=u.cgs.bases)) # Vertical - using the sound speed for a gamma=5/3 gas, but maybe that is not quite right... cgs units cm/s
-        vel   = np.zeros(pos.shape)
-        vel[:,0] = vx0
-        vel[:,1] = vy0.value
-        vel[:,2] = vz0.value
-
-        # calculate initial gravitational accelerations
-        ax,ay,az = self.forceinterpolate(r/self.rg,z/self.rg)
-#        ax,ay,az = self.getforce(r/self.rg,z/self.rg)
-        acc = np.zeros(vel.shape)
-        acc[:,0] = ax
-        acc[:,1] = ay
-        acc[:,2] = az
-
-        # number of timesteps
-        Nt = int(np.ceil(tEnd/dt))
-
-        cval = np.log10(r/self.rg) / np.log10(np.max(r)/self.rg)
-
-        # Determine the bounds of the force calculation
-        zbound = np.copy(self.rgrid)
-        for i in range(self.rgrid.size):
-            nonzeroz = np.extract(np.fabs(self.fz[i,:]) > 0, self.zgrid)
-            if nonzeroz.size > 0:
-                zbound[i] = np.max(nonzeroz)
-            else:
-                zbound[i] = np.min(self.zgrid)
-
-        # 11/26/2024 - Need to work on plotting so that the time can be displayed. Also... figuring out how to save pos(t) for the n particles.
-        plt.clf()
-        plt.subplot(121)
-        plt.plot(self.rgrid,zbound,'g')
-        for i in range(self.rgrid.size):
-            for j in range(self.zgrid.size):
-                if np.fabs(self.fz[i,j]) > 0: plt.scatter(self.rgrid[i],self.zgrid[j],c=0.5,s=2)
-        plt.plot(self.rstar, self.diskheight,'k')
-        plt.plot(self.rstar[:self.zt1.size],self.zt1,'b--')
-        plt.ylabel(r'Disk height/$r_g$')
-        plt.xlabel(r'Radial distance/$r_g$')
-        plt.yscale("log")
-        plt.xscale("log")
-        plt.subplot(122)
-        plt.ylabel(r'y/$r_g$')
-        plt.xlabel(r'x/$r_g$')
-        plt.yscale("log")
-        plt.xscale("log")
-        plt.plot(np.logspace(-3,0,50),np.sqrt(1-np.logspace(-3,0,50)*np.logspace(-3,0,50)),"k")
-        # Simulation Main Loop
-        for i in range(Nt):
-            
-            # (1/2) kick
-            vel += acc * dt/2
-
-            # drift
-            pos += vel * dt
-            zmin = np.interp(np.sqrt(pos[:,0]*pos[:,0]+pos[:,1]*pos[:,1]), self.rstar * self.rg.value, self.zt1 * self.rg.value)
-            pos[:,2] = np.where(pos[:,2] < zmin, zmin, pos[:,2])
-
-            r = np.sqrt(pos[:,0]*pos[:,0]+pos[:,1]*pos[:,1])/self.rg.value
-
-            # update accelerations
-            ax,ay,az = self.forceinterpolate(r/self.rg,z/self.rg)
-#            ax,ay,az = self.getforce(r,pos[:,2]/self.rg)
-            acc[:,0] = ax
-            acc[:,1] = ay
-            acc[:,2] = az
-
-            # (1/2) kick
-            vel += acc * dt/2
-
-            # update time
-            t += dt
-
-            # get density for plotting
-#            rho = getDensity( pos, pos, m, h )
-            plt.subplot(121)
-            plt.scatter(r,pos[:,2]/self.rg.value, c=cval, s=0.5) #, cmap=plt.cm.autumn, s=10, alpha=0.5)
-            plt.subplot(122)
-            plt.scatter(pos[:,0]/self.rg.value,pos[:,1]/self.rg.value, c=cval, s=0.5) #, cmap=plt.cm.autumn, s=10, alpha=0.5)
-            plt.pause(0.001)
-	    
     ######################################################
     def surfdens(self, z, i_annulus): #z0, rho0):
         s   = np.empty(z.size)
@@ -807,6 +707,10 @@ class ntdisk:
 
         return rho
 
+    # This is for interpolating the density grid for a particular value of r and z
+    def verticaldensity_onepoint(self,r,z):
+        return np.interp(r, self.rstar, self.verticaldensity2(np.broadcast_to(z, self.rstar.shape), range(self.nr)))
+
     ######################################################
     def verticaltemperature(self, z, i_annulus):
         zp = np.append(z,100.0*self.diskheight[i_annulus] * self.rg)
@@ -816,491 +720,24 @@ class ntdisk:
         sdr = 1 - 4*np.power(sdc/sd0,2)
         return self.temperature[i_annulus] * np.power(sdr, 0.25)
 
-######################################################
-"""
-Create Your Own Smoothed-Particle-Hydrodynamics Simulation (With Python)
-Philip Mocz (2020) Princeton Univeristy, @PMocz
 
-Simulate the structure of a star with SPH
-"""
+    # This is for a range of z values and an array of i_annulus. Assumes both have the same dimension
+    def verticaltemperature2(self, z, i_annul):
+        temperature = np.zeros(z.size) * u.K
+        for i in range(z.size):
+            temperature[i] = self.verticaltemperature(z[i],i_annul[i])
 
-def W( x, y, z, h ):
-	"""
-    Gausssian Smoothing kernel (3D)
-	x     is a vector/matrix of x positions
-	y     is a vector/matrix of y positions
-	z     is a vector/matrix of z positions
-	h     is the smoothing length
-	w     is the evaluated smoothing function
-	"""
-	
-	r = np.sqrt(x**2 + y**2 + z**2)
-	
-	w = (1.0 / (h*np.sqrt(np.pi)))**3 * np.exp( -r**2 / h**2)
-	
-	return w
-	
-	
-def gradW( x, y, z, h ):
-	"""
-	Gradient of the Gausssian Smoothing kernel (3D)
-	x     is a vector/matrix of x positions
-	y     is a vector/matrix of y positions
-	z     is a vector/matrix of z positions
-	h     is the smoothing length
-	wx, wy, wz     is the evaluated gradient
-	"""
-	
-	r = np.sqrt(x**2 + y**2 + z**2)
-	
-	n = -2 * np.exp( -r**2 / h**2) / h**5 / (np.pi)**(3/2)
-	wx = n * x
-	wy = n * y
-	wz = n * z
-	
-	return wx, wy, wz
-	
-	
-def getPairwiseSeparations( ri, rj ):
-	"""
-	Get pairwise desprations between 2 sets of coordinates
-	ri    is an M x 3 matrix of positions
-	rj    is an N x 3 matrix of positions
-	dx, dy, dz   are M x N matrices of separations
-	"""
-	
-	M = ri.shape[0]
-	N = rj.shape[0]
-	
-	# positions ri = (x,y,z)
-	rix = ri[:,0].reshape((M,1))
-	riy = ri[:,1].reshape((M,1))
-	riz = ri[:,2].reshape((M,1))
-	
-	# other set of points positions rj = (x,y,z)
-	rjx = rj[:,0].reshape((N,1))
-	rjy = rj[:,1].reshape((N,1))
-	rjz = rj[:,2].reshape((N,1))
-	
-	# matrices that store all pairwise particle separations: r_i - r_j
-	dx = rix - rjx.T
-	dy = riy - rjy.T
-	dz = riz - rjz.T
-	
-	return dx, dy, dz
-	
+        return temperature
 
-def getDensity( r, pos, m, h ):
-	"""
-	Get Density at sampling loctions from SPH particle distribution
-	r     is an M x 3 matrix of sampling locations
-	pos   is an N x 3 matrix of SPH particle positions
-	m     is the particle mass
-	h     is the smoothing length
-	rho   is M x 1 vector of densities
-	"""
-	
-	M = r.shape[0]
-	
-	dx, dy, dz = getPairwiseSeparations( r, pos );
-	
-	rho = np.sum( m * W(dx, dy, dz, h), 1 ).reshape((M,1))
-	
-	return rho
-	
-	
-def getPressure(rho, k, n):
-	"""
-	Equation of State
-	rho   vector of densities
-	k     equation of state constant
-	n     polytropic index
-	P     pressure
-	"""
-	
-	P = k * rho**(1+1/n)
-	
-	return P
-
-
-def getAcc( pos, vel, m, h, k, n, lmbda, nu ):
-	"""
-	Calculate the acceleration on each SPH particle
-	pos   is an N x 3 matrix of positions
-	vel   is an N x 3 matrix of velocities
-	m     is the particle mass
-	h     is the smoothing length
-	k     equation of state constant
-	n     polytropic index
-	lmbda external force constant
-	nu    viscosity
-	a     is N x 3 matrix of accelerations
-	"""
-	
-	N = pos.shape[0]
-	
-	# Calculate densities at the position of the particles
-	rho = getDensity( pos, pos, m, h )
-	
-	# Get the pressures
-	P = getPressure(rho, k, n)
-	
-	# Get pairwise distances and gradients
-	dx, dy, dz = getPairwiseSeparations( pos, pos )
-	dWx, dWy, dWz = gradW( dx, dy, dz, h )
-	
-	# Add Pressure contribution to accelerations
-	ax = - np.sum( m * ( P/rho**2 + P.T/rho.T**2  ) * dWx, 1).reshape((N,1))
-	ay = - np.sum( m * ( P/rho**2 + P.T/rho.T**2  ) * dWy, 1).reshape((N,1))
-	az = - np.sum( m * ( P/rho**2 + P.T/rho.T**2  ) * dWz, 1).reshape((N,1))
-	
-	# pack together the acceleration components
-	a = np.hstack((ax,ay,az))
-	
-	# Add external potential force
-	a -= lmbda * pos
-	
-	# Add viscosity
-	a -= nu * vel
-	
-	return a
-
+    # This is for interpolating the density grid for a particular value of r and z
+    def verticaltemperature_onepoint(self,r,z):
+        return np.interp(r, self.rstar, self.verticaltemperature2(np.broadcast_to(z, self.rstar.shape), range(self.nr)))
 
 
 ######################################################
 
-plt.style.use(astropy_mpl_style)
-plt.ion()
-quantity_support()
-plt.clf()
-plt.pause(3)
 ######################################################
-#sbh         = 0.01
-#mbh         = 1.0e+8 # Solar masses
-#mdot        = 1.8 # solar mass per year
-sbh         = 0.99
-mbh         = 1.0e+8 # Solar masses
-mdot        = 1.0 # solar mass per year
-alpha       = 0.1
-inclination = 30.0 * (np.pi / 180.0)
-robs        = 1.0e+1 # rg
-thetaobs    = 0.0
-nr          = 300
-#nr          = 3000
-rlo         = 1.01 # rms
-rhi         = 1.0e+5 # rms
-
-mydisk = ntdisk(sbh, mbh, mdot, alpha, inclination, robs, nr, rlo, rhi)
-mydisk.makedisk()
-mydisk.photosphere()
-mydisk.pltdisk()
-mydisk.genforcemultgrid(20,clobber=False)
-mydisk.sph(400,    # Number of particles
-           0,      # current time of the simulation
-           3.1e+7,     # time at which simulation ends
-           3.1e+7/(365*24),   # timestep
-           0.1)    # smoothing length
-
-######################################################
-if False:
-    mydisk.pltdisk()
-    plt.subplot(224)
-    plt.plot(mydisk.rstar,mydisk.diskheight,'k')
-    plt.plot(mydisk.rstar[:mydisk.zt1.size],mydisk.zt1,'b--')
-    plt.ylabel(r'z/$r_g$')
-    plt.xlabel(r'Radial distance $r/r_g$') #  ($r_g = GM/c^2 = $'+f'{mydisk.rg:.2e}'+')')
-    plt.yscale("log")
-    plt.xscale("log")
-    plt.subplot(222)
-    plt.xlabel(r'$x/r_g$') #  ($r_g = GM/c^2 = $'+f'{mydisk.rg:.2e}'+')')
-    plt.ylabel(r'$y/r_g$')
-    plt.yscale("log")
-    plt.xscale("log")
-    plt.pause(0.001)
-
 
 
 ######################################################
-if False:
-    for r in np.random.randint(0,high=nr-1,size=nr):
-        print(f"Computing test particle trajectory lanched from ({mydisk.rstar[r]}, {mydisk.zt1[r]})")
-        solution = mydisk.traceparticle(r,0,np.linspace(0,3.1e+7,365*24*60))
-#        x_of_t  = solution.y[:,0] * u.cm / mydisk.rg
-#        vx_of_t = solution.y[:,1] * (u.cm).to(u.kilometer) / u.s
-#        y_of_t  = solution.y[:,2] * u.cm / mydisk.rg
-#        vy_of_t = solution.y[:,3] * (u.cm).to(u.kilometer) / u.s
-#        z_of_t  = solution.y[:,4] * u.cm / mydisk.rg
-#        vz_of_t = solution.y[:,5] * (u.cm).to(u.kilometer) / u.s
-        x_of_t  = solution[:,0] * u.cm / mydisk.rg
-        vx_of_t = solution[:,1] * (u.cm).to(u.kilometer) / u.s
-        y_of_t  = solution[:,2] * u.cm / mydisk.rg
-        vy_of_t = solution[:,3] * (u.cm).to(u.kilometer) / u.s
-        z_of_t  = solution[:,4] * u.cm / mydisk.rg
-        vz_of_t = solution[:,5] * (u.cm).to(u.kilometer) / u.s
 
-        r_of_t = np.sqrt(x_of_t * x_of_t + y_of_t * y_of_t)
-        theta_of_t = np.rad2deg(np.arctan2(y_of_t,x_of_t))
-
-        plt.subplot(224)
-        plt.scatter(r_of_t, z_of_t, c=theta_of_t.value, lw=0, s=8, cmap="viridis")
-        plt.subplot(222)
-        plt.scatter(x_of_t, y_of_t, c=theta_of_t.value, lw=0, s=8, cmap="viridis")
-        m = np.max([x_of_t,y_of_t])
-        plt.xlim([1,m])
-        plt.ylim([1,m])
-        plt.pause(0.001)
-
-
-
-
-######################################################
-if False:
-    txt = "{} {:10.6f} {:10.6f} {:10.6f} {:10.6f} {:10.6f} {:10.6e} {:10.6e} {}"
-
-    plt.ion()
-
-    fu = u.erg / (u.s * u.cm * u.cm * u.sr * u.Hz)
-
-    ngrid     = 2
-    lgrend    = np.log10(np.max(0.9*mydisk.rstar))
-    lgzend    = 3 
-    tol       = 1.0e-7
-    frequency = np.logspace(13,19,num=3000) * u.Hz
-    fx        = np.zeros((ngrid, ngrid)) * u.cm / u.s**2
-    fy        = np.zeros((ngrid, ngrid)) * u.cm / u.s**2
-    fz        = np.zeros((ngrid, ngrid)) * u.cm / u.s**2
-    rgrid     = mydisk.rms * np.power(10.0, lgrend * (np.arange(ngrid)/ngrid)) / np.sqrt(2)
-    zgrid     = mydisk.rms * np.power(10.0, lgzend * (np.arange(ngrid)/ngrid)) / np.sqrt(2)
-
-    # Observer is in the x-z plane -> yobs=0, xobs = robs
-    for j in range(ngrid):
-        mydisk.robs = rgrid[j]
-        for k in range(ngrid):
-            mydisk.zobs  = zgrid[k]
-            if np.max(mydisk.rstar) > mydisk.robs:
-                if (mydisk.zobs > (np.extract(mydisk.rstar > mydisk.robs, mydisk.zt1))[0]):
-                    fluxrt    = np.zeros(frequency.size) * fu
-                    flux      = np.zeros(frequency.size) * fu
-                    rave      = np.zeros(frequency.size) * fu
-
-                    # Gravity from the black hole
-                    # dynes per gram (cm/s^2)
-                    fx[j,k]   = -((const.G.cgs * mydisk.mbh / (mydisk.rg * mydisk.rg) ) * (mydisk.robs / np.power(mydisk.robs * mydisk.robs + mydisk.zobs * mydisk.zobs, 3/2)))
-                    fz[j,k]   = -((const.G.cgs * mydisk.mbh / (mydisk.rg * mydisk.rg) ) * (mydisk.zobs / np.power(mydisk.robs * mydisk.robs + mydisk.zobs * mydisk.zobs, 3/2)))
-
-                    # Gravity from the disk
-                    # dynes per gram (cm/s^2)
-                    [fdx,fdz] = mydisk.diskgravity(rgrid[j]*mydisk.rg,zgrid[k]*mydisk.rg)
-                    fx[j,k] += fdx
-                    fz[j,k] += fdz
-
-                    for r in range(mydisk.rstar.size):
-                        dtheta      = 2.0 * np.pi / mydisk.ntheta[r]
-                        ntr         = int(mydisk.ntheta[r])
-                        theta       = np.linspace(0,2.0*np.pi,num=ntr)
-                        mydisk.rref = r
-                        fluxr       = np.zeros(frequency.size) * fu
-                        oldfx       = fx[j,k] # Keep a copy of the force/mass due to just BH + disk gravity
-                        oldfy       = fy[j,k]
-                        oldfz       = fz[j,k]
-
-
-                        (Rx, Ry, Rz) = (mydisk.robs * np.cos(mydisk.thetaobs) - mydisk.rstar[mydisk.rref] * np.cos(theta),
-                                        mydisk.robs * np.sin(mydisk.thetaobs) - mydisk.rstar[mydisk.rref] * np.sin(theta),
-                                        np.broadcast_to(mydisk.zobs - mydisk.zt1[mydisk.rref], theta.shape)) # rg
-                        Rr = np.sqrt(Rx*Rx + Ry*Ry)
-                        Rmag       = np.sqrt(Rr*Rr + Rz*Rz)
-                        Rhat = np.array([Rx,Ry,Rz])/Rmag
-
-                        (gradzx,gradzy,gradzz) = (-mydisk.dzdr[mydisk.rref] * np.cos(theta),
-                                                  -mydisk.dzdr[mydisk.rref] * np.sin(theta),
-                                                  np.ones(theta.size))
-                        gradzr     = np.sqrt(gradzx*gradzx + gradzy*gradzy)
-                        gradzmag   = np.sqrt(gradzr*gradzr + gradzz*gradzz)
-
-                        cosbeta    = np.sum(np.array([Rx,Ry,Rz])*np.array([gradzx,gradzy,gradzz]), axis=0) / (Rmag * gradzmag)
-
-                        cbdx = np.extract(cosbeta > 0, np.arange(cosbeta.size))
-                        for t in cbdx:
-                            fluxrt = mydisk.fnudiskpatch(frequency, theta[t])
-                            fluxr += np.copy(fluxrt)
-                            flux  += np.copy(fluxrt)
-                            rave  += np.copy(fluxrt) * mydisk.rstar[r]
-
-                            # magnitude of radiation force per unit area: fluxrt/const.c.cgs
-                            # [fx] = erg / (sr * cm^3) = dyne / (sr cm^2)
-                            # direction of radiation force per unit area:
-
-                            dOmega = (mydisk.rstar[r] * mydisk.deltar[r] * dtheta * cosbeta[t] / (Rmag[t] * Rmag[t])) * u.sr
-
-                            # Components of the force per unit mass - This is just electron scattering. Need force multiplier for lines/edges
-                            nufnurt  = np.sum(np.multiply(fluxrt,frequency)) * dOmega/(const.c.cgs * const.u.cgs)
-                            fx[j,k] += nufnurt * (const.sigma_T.cgs) * Rx[t] / Rmag[t]
-                            fy[j,k] += nufnurt * (const.sigma_T.cgs) * Ry[t] / Rmag[t]
-                            fz[j,k] += nufnurt * (const.sigma_T.cgs) * Rz[t] / Rmag[t]
-
-                        if np.max(flux.value) > 0.0:
-                            csflux = CubicSpline(frequency.value,flux.value)
-                            csiflux = csflux.integrate((0.1 * ((u.Ry)/const.h).to(u.Hz)).value, (1000 * ((u.Ry)/const.h).to(u.Hz)).value) * fu * u.Hz
-                            lgxi = np.log10((4 * np.pi * csiflux / mydisk.verticaldensity(mydisk.zobs * mydisk.rg, r)).value)
-                            lSob = (vth * vth / np.sqrt(fx[j,k]*fx[j,k] + fy[j,k]*fy[j,k] + fz[j,k]*fz[j,k])).decompose()
-                            lgt  = np.log10((const.sigma_T * mydisk.verticaldensity(mydisk.zobs * mydisk.rg,r) * lSob).decompose())
-                            fm = np.power(10.0, mydisk.fmultfunc((lgt,lgxi)))
-
-                            nit = 5
-                            while nit > 0:
-                                nit -= 1
-                                fx[j,k] = oldfx
-                                fy[j,k] = oldfy
-                                fz[j,k] = oldfz
-                                for t in cbdx:
-                                    fluxrt = mydisk.fnudiskpatch(frequency, theta[t])
-
-                                    # magnitude of radiation force per unit area: fluxrt/const.c.cgs
-                                    # [fx] = erg / (sr * cm^3) = dyne / (sr cm^2)
-                                    # direction of radiation force per unit area:
-
-                                    dOmega = (mydisk.rstar[r] * mydisk.deltar[r] * dtheta * cosbeta[t] / (Rmag[t] * Rmag[t])) * u.sr
-
-                                    # Components of the force per unit mass - This is just electron scattering. Need force multiplier for lines/edges
-                                    nufnurt  = np.sum(np.multiply(fluxrt,frequency)) * dOmega/(const.c.cgs * const.u.cgs)
-                                    fx[j,k] += fm * nufnurt * (const.sigma_T.cgs) * Rx[t] / Rmag[t]
-                                    fy[j,k] += fm * nufnurt * (const.sigma_T.cgs) * Ry[t] / Rmag[t]
-                                    fz[j,k] += fm * nufnurt * (const.sigma_T.cgs) * Rz[t] / Rmag[t]
-
-                                lSob = (vth * vth / np.sqrt(fx[j,k]*fx[j,k] + fy[j,k]*fy[j,k] + fz[j,k]*fz[j,k])).decompose()
-                                lgt  = np.log10((const.sigma_T * mydisk.verticaldensity(mydisk.zobs * mydisk.rg,r) * lSob).decompose())
-                                fm = np.power(10.0, fmultfunc((lgt,lgxi)))
-
-                            dr = np.multiply(fx.value, 1.0/np.sqrt(np.square(fx.value) + np.square(fy.value) + np.square(fz.value)+tol))
-                            dz = np.multiply(fz.value, 1.0/np.sqrt(np.square(fx.value) + np.square(fy.value) + np.square(fz.value)+tol))
-
-                            plt.clf()
-                            mydisk.pltdisk(r)
-
-                            plt.subplot(322)
-                            plt.axis('on')
-                            nufnu = np.multiply(flux,frequency)
-                            plt.loglog(frequency,nufnu)
-                            plt.loglog(frequency,np.multiply(fluxr,frequency))
-                            ax = plt.gca()
-                            ax.set_ylim([np.max([0.9*np.min(nufnu/(fu * u.Hz)),
-                                                 1.0e-10 * np.max(np.multiply(fluxr,frequency)/(fu * u.Hz))]),
-                                         1.5*np.max(nufnu/(fu * u.Hz))])
-                            plt.ylabel("nuFnu (erg/s/cm2)")
-                            plt.xlabel('Frequency (Hz)')
-                            plt.text(1.1*np.min(frequency / u.Hz),30.0*np.min(nufnu/(fu * u.Hz)), r'$dF_x$ = '+'{:0.5g}'.format(np.fabs((fx[j,k].value-oldfx.value)/(oldfx.value+tol)))+r'  $dF_y$ = '+'{:0.5g}'.format(np.fabs((fy[j,k].value-oldfy.value)/(oldfy.value+tol)))+r'  $dF_z$ = '+'{:0.5g}'.format(np.fabs((fz[j,k].value-oldfz.value)/(oldfz.value+tol))))
-                            plt.text(1.1*np.min(frequency / u.Hz),1.5*np.min(nufnu/(fu * u.Hz)), r'$F_r$ = $F_x$ = '+'{:0.5g}'.format(fx[j,k])+r'  $F_y$ = '+'{:0.5g}'.format(fy[j,k])+r'  $F_z$ = '+'{:0.5g}'.format(fz[j,k]))
-
-                            plt.subplot(324)
-                            plt.loglog(frequency,rave/flux)
-                            plt.ylabel(r'<r>/$r_g$')
-                            plt.xlabel("Frequency (Hz)")
-                            plt.grid()
-
-                            plt.subplot(326)
-                            plt.plot(mydisk.rstar,mydisk.diskheight,'k')
-                            plt.plot(mydisk.rstar[:mydisk.zt1.size],mydisk.zt1,'b--')
-                            for l in range(ngrid):
-                                rarr = rgrid[l]
-                                for m in range(ngrid):
-                                    zarr = zgrid[m]
-                                    if np.sqrt(dr[l,m] * dr[l,m] + dz[l,m] * dz[l,m]) > 0:
-                                        plt.arrow(rarr, zarr, dr[l,m], dz[l,m])
-                            plt.yscale("log")
-                            plt.xscale("log")
-
-                            plt.pause(0.001)
-
-                        if (np.fabs((fx[j,k].value-oldfx.value)/(oldfx.value+tol)) < tol) and (np.fabs((fy[j,k].value-oldfy.value)/(oldfy.value+tol)) < tol) and (np.fabs((fz[j,k].value-oldfz.value)/(oldfz.value+tol)) < tol) and (np.max(flux.value) > 0.0) and (r > int(0.1*mydisk.rstar.size)):
-                            break
-                    rave = rave/flux
-            print(f"{rgrid[j]:.2e} {zgrid[k]:.2e} {fx[j,k]:.2e} {fz[j,k]:.2e} {fdx:.2e} {fdz:.2e} {fx[j,k]:.2e} {fz[j,k]:.2e} {lSob:.2e} {lgxi:.2e} {lgt:.2e}")
-
-
-    filename = "Sbh{mydisk.sbh}-MBH{np.log10(mydisk.mbh):.2f}-Mdot{mydisk.mdot}-alpha{mydisk.alpha}-rad.fits"
-    fxmaster = np.zeros((rgrid.size+1,zgrid.size+1))
-    fxmaster[1:,0] = np.copy(rgrid)
-    fxmaster[0,1:] = np.copy(zgrid)
-    fxmaster[1:,1:] = np.copy(fx)
-    fymaster = np.zeros((rgrid.size+1,zgrid.size+1))
-    fymaster[1:,0] = np.copy(rgrid)
-    fymaster[0,1:] = np.copy(zgrid)
-    fymaster[1:,1:] = np.copy(fy)
-    fzmaster = np.zeros((rgrid.size+1,zgrid.size+1))
-    fzmaster[1:,0] = np.copy(rgrid)
-    fzmaster[0,1:] = np.copy(zgrid)
-    fzmaster[1:,1:] = np.copy(fz)
-    data = Table(data=[fxmaster,fymaster,fzmaster],
-                         names=["fx","fy","fz"])
-    data.write(filename, format="fits", overwrite=True)
-    
-##    print("Writing "+filename.format(, , , ))
-##    with open(filename.format(mydisk.sbh, np.log10(mydisk.mbh), mydisk.mdot, mydisk.alpha),"w") as f:
-##        for l in range(ngrid):
-##            for m in range(ngrid):
-##                f.write(("{:10.6e}").format(rgrid[l])+(" {:10.6e}").format(zgrid[m])+(" {:10.6e}").format(dr[l,m])+(" {:10.6e}").format(dz[l,m])+"\n")
-
-
-
-
-########################################################
-##
-##def V(y,sbh,y0):
-##    yFoverG = y0*F(y0,sbh)/G(y0,sbh)
-##    #print('Inside V: y0 F0 / G0 = ',yFoverG)
-##    v1 = np.power(y, -4) * (sbh * sbh - yFoverG * yFoverG)
-##    v2 = np.power(y, -6) * (sbh - yFoverG)
-##    return (1.0 + v1 + 2.0*v2)/D(y,sbh)
-##
-########################################################
-##
-##def Phi(y,sbh):
-##    n1 = 0.02 * np.power(alpha * y0,9/8) * np.power(mstar,-3/8)
-##    n2 = n1 * np.power(mdotstar,1/4) * B(y,sbh) * np.power(C(y0,sbh),-5/8)
-##    print("Inside Phi:")
-##    print(y0,sbh,V(y0,sbh,y0),D(y0,sbh),sbh,y0,F(y0,sbh),G(y0,sbh))
-##    numerator = n2 * np.sqrt(V(y0,sbh,y0))
-##    return Q(y,sbh) + numerator / (y * np.sqrt(C(y,sbh)))
-##
-########################################################
-##
-##def getVzero(y0,sbh):
-##    x = rms
-##    scale = 0.1
-##    direc = 1
-##    while np.fabs(V(np.sqrt(x),sbh,y0)) > 1.0e-14 or V(np.sqrt(x),sbh,y0) < 0.0:
-##        olddirec = direc
-##        if V(np.sqrt(x),sbh,y0) < 0:
-##            direc = 1
-##            if direc == olddirec:
-##                scale = 1.1*scale
-##            else:
-##                scale = 0.9*scale
-##            x = x*(1.0+scale)
-##        else:
-##            direc = -1
-##            if direc == olddirec:
-##                scale = 1.1*scale
-##            else:
-##                scale = 0.9*scale
-##            x = x*(1.0-scale)
-##    return x
-##
-
-
-
-
-## From diskgravity:
-#            for tdx in range(int(self.ntheta[rdx])):
-#                x = self.rstar[rdx] * self.rg * np.cos(2.0 * np.pi * tdx/self.ntheta[rdx])
-#                y = self.rstar[rdx] * self.rg * np.sin(2.0 * np.pi * tdx/self.ntheta[rdx])
-               # Observer is in the x-z plane -> yobs=0, xobs = robs
-               # Center-of-mass of the mass element is at z=0
-#                R = np.sqrt((x - robs)*(x - robs) + y*y + zobs*zobs)
-#                frt = const.G.cgs * mass / (R * R) # magnitude of the force from the mass element
-#                frtx = frt * (x - robs) / R
-#                frtz = frt * (0 - zobs) / R
-
-#                frr += frtx
-#                fzr += frtz
