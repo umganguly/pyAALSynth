@@ -489,22 +489,6 @@ class ntdisk:
         self.x2 = self.rstar[tdx[0]]
         print('Pressure change at '+str(round(self.x1))+' rg (',self.x1*self.rg/u.cm,')  Optical depth change at '+str(round(self.x2))+' rg (',self.x2*self.rg,')')
 
-        ######################################################
-        # These tables are formatted to be easy to parse (see the python example below),
-        # and a C++ interface to simulation codes is provided. The first entry in each
-        # table is N_xi, the number of photoionization parameter values. The remainder 
-        # of the first row contains the N_xi values of log10(xi). The remainder of the
-        # first column is all the log10 values of the optical depth parameter, t. The
-        # entries corresponding to a given (t,xi) pair are the values of log10(M), where
-        # M is the force multiplier.
-        #
-        # fmult[0,:] = log10(xi)    xi = 4 np.pi Fx / nH     Fx = 0.1-1000 Ryd integrated flux
-        # fmult[:,0] = log10(t)
-        fmultfile = "D:/ganguly/AALSynth2/DPKW19_tables/DPKW19_tables/AGN1_Fmult.dat"
-        self.fmult = np.genfromtxt(fmultfile)
-
-        self.fmultfunc = RegularGridInterpolator((self.fmult[1:,0],self.fmult[0,1:]), self.fmult[1:,1:], bounds_error=False, fill_value=0) # Call as fmultfunc((lgt,lgxi))
-
     ######################################################
     def photosphere(self):
         self.zt1 = np.empty(0)
@@ -638,48 +622,6 @@ class ntdisk:
         if vdx.size > 0:
             s[vdx] = (np.sqrt(np.pi)*special.erf(1) / 2.0 + np.exp(-2) * (1 - np.exp(1-z[vdx]/(self.diskheight[i_annulus] * self.rg))))
         return s * self.diskheight[i_annulus]  * self.rg * self.density[i_annulus]
-
-    ######################################################
-#    def tracefunc(self, t, qu):
-    def tracefunc(self, qu, t):
-        x,vx,y,vy,z,vz = qu
-
-        dxdt  = vx
-        dydt  = vy
-        dzdt  = vz
-#        dvxdt,dvydt,dvzdt = self.getforce(np.sqrt(x*x+y*y),z)          # cgs units cm/s2
-        dvxdt,dvydt,dvzdt = self.forceinterpolate(np.sqrt(x*x+y*y) * u.cm / self.rg, z * u.cm / self.rg)   # cgs units cm/s2
-#        dvxdt,dvydt,dvzdt = (1,1,1)   # cgs units cm/s2
-#        print(f"{np.sqrt(x*x+y*y)} {z} {dvxdt:e} {dvydt:e} {dvzdt:e}")
-
-        if np.sqrt(vx*vx+vy*vy+vz*vz) < const.c.cgs.value:
-            gamma = 1/ np.sqrt(1 - (vx*vx+vy*vy+vz*vz)/(const.c.cgs.value*const.c.cgs.value))
-        else:
-            print(f"{t:e} {vx:e} {vy:e} {vz:e} {np.sqrt(vx*vx+vy*vy+vz*vz):e} Something strange happening with velocity")
-            gamma = np.inf
-        dvxdt /= gamma
-        dvydt /= gamma
-        dvzdt /= gamma
-
-        r = np.sqrt(x*x+y*y) * u.cm / self.rg
-        theta = np.rad2deg(np.arctan2(y,x)) * u.deg
-        zp = z * u.cm / self.rg
-        vr = np.sqrt(vx*vx+vy*vy) * 1.0e-5 * u.kilometer / u.s
-        vtheta = np.rad2deg(np.arctan2(vy,vx)) * u.deg
-#        print(f"{t:e} {r:e} {theta:10.6g} {zp:e} {vr:e} {vtheta:10.6g} {dzdt * 1.0e-5 * u.kilometer / u.s:e} {dvxdt:e} {dvydt:e} {dvzdt:e}")
-#        input("paused")
-        return [dxdt,dvxdt,dydt,dvydt,dzdt,dvzdt]
-    
-    ######################################################
-    def traceparticle(self,r,theta,t):
-        vx0 = 0 
-        vy0 = (const.c.cgs / np.sqrt(self.rstar[r])) # Rotation cgs units cm/s
-        vz0 = ((np.sqrt(5 * const.k_B.cgs * self.tempt1[r] / (3 * const.u.cgs))).decompose(bases=u.cgs.bases)) # Vertical - using the sound speed for a gamma=5/3 gas, but maybe that is not quite right... cgs units cm/s
-        print(f"   Initial rotation = {const.c.cgs} / sqrt({self.rstar[r]}) = {vy0}")
-        print(f"   Initial vertical speed = sqrt(5 * {const.k_B.cgs} * {self.tempt1[r]} / (3 * {const.u.cgs}) = {vz0}")
-        u0 = [self.rstar[r]*self.rg.value*np.cos(theta),vx0,self.rstar[r]*self.rg.value*np.sin(theta),vy0.value,self.zt1[r]*self.rg.value,vz0.value]
-#        return solve_ivp(self.tracefunc,(0,t[-1]),u0,t_eval=t,first_step=0.1)
-        return odeint(self.tracefunc,u0,t)
 
     ######################################################
     # This is for a range of z values at a given i_annulus. [z = array, i_annulus = scalar]
